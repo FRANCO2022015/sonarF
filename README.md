@@ -1,11 +1,8 @@
 # NewsHub - Portal de Noticias 📰
 
-> **Proyecto de experimentación con SonarQube / SonarCloud**
-> Contiene errores intencionales clasificados por categorías de Sonar.
-
 ---
 
-## 📁 Estructura del Proyecto
+##  Estructura del Proyecto
 
 ```
 sonarF/
@@ -23,89 +20,7 @@ sonarF/
 
 ---
 
-## 🚀 Cómo Iniciar el Proyecto
-
-### 1. Instalar Dependencias (Obligatorio)
-
-Primero instala las librerías necesarias en tu entorno de Python (incluye `pyjwt`, `fastapi`, `uvicorn`, `pydantic`):
-
-```bash
-# Desde la raíz (sonarF/)
-pip install -r backend/requirements.txt
-```
-
-### 2. Iniciar el Servidor Backend
-
-Tienes **dos opciones** según dónde estés parado en la terminal:
-
-**Opción A: Desde la carpeta `backend/` (Recomendado)**
-```bash
-cd backend
-uvicorn main:app --reload --port 8000
-```
-
-**Opción B: Desde la raíz del proyecto (`sonarF/`)**
-```bash
-uvicorn backend.main:app --reload --port 8000
-```
-
-
-El servidor estará disponible en: **http://localhost:8000**
-Documentación Swagger en: **http://localhost:8000/docs**
-
-### 3. Abrir el Frontend
-
-Simplemente abre el archivo en tu navegador:
-```
-frontend/index.html
-```
-> Asegúrate de que el backend esté corriendo en el puerto 8000 antes de abrir el frontend.
-
-### 4. Credenciales de Prueba
-
-| Usuario    | Contraseña    | Rol      |
-|------------|---------------|----------|
-| `admin`    | `admin123`    | Admin    |
-| `redactor` | `redactor123` | Editor   |
-
----
-
-## 🔍 Ejecutar Análisis con Sonar
-
-### Opción A: SonarCloud (Recomendado para empezar)
-1. Crear cuenta en [sonarcloud.io](https://sonarcloud.io)
-2. Crear un nuevo proyecto y obtener el token
-3. Editar `sonar-project.properties`:
-   ```properties
-   sonar.host.url=https://sonarcloud.io
-   sonar.organization=tu-organizacion
-   sonar.login=tu_token_sonarcloud
-   ```
-4. Ejecutar:
-   ```bash
-   sonar-scanner
-   ```
-
-### Opción B: SonarQube Local
-1. Instalar y arrancar SonarQube en Docker:
-   ```bash
-   docker run -d --name sonarqube -p 9000:9000 sonarqube:lts-community
-   ```
-2. Acceder a http://localhost:9000 (admin/admin)
-3. Crear proyecto y obtener token
-4. Editar `sonar-project.properties`:
-   ```properties
-   sonar.host.url=http://localhost:9000
-   sonar.login=tu_token_local
-   ```
-5. Ejecutar desde la raíz del proyecto:
-   ```bash
-   sonar-scanner
-   ```
-
----
-
-## 🐛 Errores Intencionales Sembrados
+##  Errores 
 
 | # | Archivo | Categoría Sonar | Descripción |
 |---|---------|-----------------|-------------|
@@ -137,7 +52,3 @@ frontend/index.html
 
 ---
 
-## 🛡️ Aviso Legal
-
-> **Este proyecto es únicamente para fines educativos y de prueba con herramientas de análisis estático de código (SonarQube / SonarCloud / SonarLint).**
-> Los errores y vulnerabilidades incluidos son deliberados. **No debe ser utilizado en entornos de producción.**
